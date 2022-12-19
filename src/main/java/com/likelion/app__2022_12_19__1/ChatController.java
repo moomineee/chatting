@@ -33,11 +33,11 @@ public class ChatController {
 
     @GetMapping("/messages")
     @ResponseBody
-    public RsData<List<ChatMessage>> messages() {
+    public RsData<MessagesResponse> messages() {
         return new RsData<>(
                 "S-1",
                 "성공",
-                chatMessages
+                new MessagesResponse(chatMessages, chatMessages.size())
         );
     }
 }
